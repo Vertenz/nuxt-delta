@@ -52,7 +52,6 @@ export default {
     // TODO baseURL: 'https://deltahelperbasa.xyz/',
   },
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       name: 'avarcom',
@@ -68,7 +67,6 @@ export default {
     },
   },
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {

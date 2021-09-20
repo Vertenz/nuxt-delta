@@ -250,11 +250,22 @@ export default {
         this.phone = phoneNumber
       }, 800)
     },
+    nextSection() {
+      if (this.servicesShow === true) {
+        this.contactShow = true
+      } else {
+        this.servicesShow = true
+      }
+    },
     al() {
       if (!this.editEnable) {
         this.text = event.target.textContent
         this.el = event.target
         this.editEnable = true
+        this.el.style.cssText = `
+            background-color: darkslategrey;
+            filter: drop-shadow(2px 4px 6px black);
+            `
         event.preventDefault()
       } else {
         alert(
@@ -263,21 +274,21 @@ export default {
       }
     },
     changeText() {
-      console.log(this.text)
       this.el.textContent = this.text
     },
     changePosition() {
       document.body.onmouseup = () => {
         if (!this.changePlace) {
           const block = document.getElementById('edit')
-          block.style.left = event.clientX + 'px'
-          block.style.top = event.clientY + 'px'
+          block.style.left = event.clientX - 175 + 'px'
+          block.style.top = event.clientY - 175 + 'px'
           this.changePlace = true
         }
       }
       this.changePlace = false
     },
     close() {
+      this.el.style.cssText = ` `
       this.text = ''
       this.el = ''
       this.editEnable = false
