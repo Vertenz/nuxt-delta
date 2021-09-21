@@ -59,7 +59,7 @@ export default {
       description: 'служба аварийных коммисаров',
       background_color: '#121212',
       theme_color: '#b71c1c',
-      start_url: 'https://deltahelperbasa.xyz/',
+      start_url: 'https://delta-nuxt.herokuapp.com/',
     },
     icons: {
       iconFileName:
@@ -81,6 +81,6 @@ export default {
   build: {},
 
   server: {
-    port: 3000,
+    port: process.env.PORT || 4002,
   },
 }
