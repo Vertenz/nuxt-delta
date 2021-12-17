@@ -8,21 +8,24 @@
       <v-container>
         <v-row align="center" justify="center" class="contact__title">
           <div class="pa-4">
-            <h4 class="contact__title_h">контакты</h4>
+            <h3 class="contact__title_h">контакты</h3>
           </div>
         </v-row>
         <v-row>
           <div class="contact-block padding">
             <div class="contact-block__logo">
               <v-img
-                :src="require('../assets/newIcon/help.svg')"
+                :src="require('~/static/newIcon/help.svg')"
                 alt="Телефон"
                 :width="$vuetify.breakpoint.xs ? 50 : 70"
                 :height="$vuetify.breakpoint.xs ? 50 : 70"
               />
             </div>
             <div class="contact-block__text">
-              <a href="tel:+74959371722" class="contact-block__link">
+              <a
+                :href="'tel:' + $store.state.phone"
+                class="contact-block__link"
+              >
                 <p class="contact-block__p">Позвонить нам</p>
                 <p class="contact-block__p">Круглосуточная помощь</p>
               </a>
@@ -33,7 +36,7 @@
           <div class="contact-block padding">
             <div class="contact-block__logo">
               <v-img
-                :src="require('../assets/newIcon/posovet.svg')"
+                :src="require('~/static/newIcon/posovet.svg')"
                 alt="E-mail"
                 :width="$vuetify.breakpoint.xs ? 50 : 70"
                 :height="$vuetify.breakpoint.xs ? 50 : 70"

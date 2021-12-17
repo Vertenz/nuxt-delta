@@ -8,13 +8,13 @@
       <v-container>
         <v-row align="center" justify="center" class="faq__title">
           <div class="pa-4">
-            <h4 class="faq__title_h">Часто задаваемые вопросы</h4>
+            <h3 class="faq__title_h">Часто задаваемые вопросы</h3>
           </div>
         </v-row>
         <div class="faq__block padding">
           <details class="dtp">
             <summary id="evroRules" class="dtp__summary">
-              <h3>Когда можно оформить ДТП без ГАИ, по европротоколу?</h3>
+              <h4>Когда можно оформить ДТП без ГАИ, по европротоколу?</h4>
             </summary>
             <div class="dtp__culprit">
               <h5>
@@ -49,15 +49,15 @@
                 >
               </p>
             </div>
-            <h4 class="dtp__attention">
+            <h5 class="dtp__attention">
               Вы можете вызвать на место ДТП эксперта
               <router-link to="/call">на нашем сайте.</router-link> для
               получения профессиональной помощи
-            </h4>
+            </h5>
           </details>
           <details class="dtp">
             <summary class="dtp__summary">
-              <h3>Можно ли оформить без ГАИ аварию, если нет ОСАГО?</h3>
+              <h4>Можно ли оформить без ГАИ аварию, если нет ОСАГО?</h4>
             </summary>
             <div class="dtp__culprit">
               <p>
@@ -95,10 +95,10 @@
           </details>
           <details class="dtp">
             <summary class="dtp__summary">
-              <h3>
+              <h4>
                 Машина с иностранными номерами - можно ли оформить ДТП без
                 ГИБДД?
-              </h3>
+              </h4>
             </summary>
             <div class="dtp__culprit">
               <p>
@@ -117,9 +117,9 @@
           </details>
           <details class="dtp">
             <summary class="dtp__summary">
-              <h3>
+              <h4>
                 Сколько денег выплатит страховая, если ДТП оформлено без ГИБДД?
-              </h3>
+              </h4>
             </summary>
             <div class="dtp__culprit">
               <h5>
@@ -156,9 +156,9 @@
           </details>
           <details class="dtp">
             <summary class="dtp__summary">
-              <h3>
+              <h4>
                 Договорились оформить ДТП без ГАИ. Можно ли съехать с места ДТП?
-              </h3>
+              </h4>
             </summary>
             <div class="dtp__culprit">
               <p>
@@ -174,7 +174,7 @@
           </details>
           <details class="dtp">
             <summary class="dtp__summary">
-              <h3>Я попал в ДТП. Что делать?</h3>
+              <h4>Я попал в ДТП. Что делать?</h4>
             </summary>
             <div class="dtp__culprit">
               а) Я виновник Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -242,14 +242,15 @@ export default {
   display: block;
 }
 
-.dtp__summary > h3 {
+.dtp__summary > h4 {
   text-align: center;
   font-size: 1.5rem;
+  font-weight: normal;
 }
 
-details[open] > summary > h3 {
+details[open] > summary > h4 {
   transition: 0.3s;
-  color: red;
+  font-weight: lighter;
 }
 
 .dtp__summary::-webkit-details-marker {

@@ -49,7 +49,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    // TODO baseURL: 'https://deltahelperbasa.xyz/',
+    baseURL: 'http://deltapilot.xyz/',
   },
 
   pwa: {
@@ -59,7 +59,7 @@ export default {
       description: 'служба аварийных коммисаров',
       background_color: '#121212',
       theme_color: '#b71c1c',
-      start_url: 'https://delta-nuxt.herokuapp.com/',
+      start_url: 'http://deltapilot.xyz/',
     },
     icons: {
       iconFileName:
@@ -76,11 +76,9 @@ export default {
       dark: true,
     },
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   server: {
-    port: process.env.PORT || 4002,
+    port: 3000,
   },
 }

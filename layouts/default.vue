@@ -4,7 +4,7 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
-      :src="require('../assets/backmain.png')"
+      :src="require('static/backmain.png')"
       class="nav"
       fixed
       app
@@ -36,7 +36,7 @@
       <div class="header__title">
         <NuxtLink to="/" class="header__href" no-prefetch>
           <v-img
-            :src="require('../assets/newIcon/logoDelta.svg')"
+            :src="require('../static/newIcon/logoDelta.svg')"
             alt="ГС Дельта"
             max-width="180"
             max-height="178"
@@ -114,15 +114,6 @@ export default {
 }
 </script>
 <style>
-@font-face {
-  font-family: 'Delta';
-  src: url('../assets/fonts/PFSquareSansPro-XBlack_0.woff2') format('woff2'),
-    url('../assets/fonts/PFSquareSansPro-ExtraBlack.woff') format('woff'),
-    url('../assets/fonts/PFSquareSansPro-Regular.woff') format('woff'),
-    url('../assets/fonts/PFSquareSansPro-Regular_0.woff2') format('woff2'),
-    url('../assets/fonts/PFSquareSansPro-Regular.ttf') format('opentype');
-}
-
 .center {
   display: flex;
   justify-content: center;
@@ -157,10 +148,6 @@ export default {
     rgba(37, 37, 37, 1) 35%,
     rgba(18, 18, 18, 0.991) 100%
   );
-}
-
-.v-application {
-  font-family: 'Delta', Serif, sans-serif !important;
 }
 
 .alert {

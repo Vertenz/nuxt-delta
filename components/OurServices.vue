@@ -8,7 +8,7 @@
       <v-container>
         <v-row align="center" justify="center" class="service__title">
           <div class="pa-4">
-            <h4 class="service__title_h">Чем мы еще можем помочь?</h4>
+            <h3 class="service__title_h">Чем мы еще можем помочь?</h3>
           </div>
         </v-row>
         <v-row class="wrapper">
@@ -28,13 +28,20 @@
                       :width="$vuetify.breakpoint.xs ? 80 : 100"
                       :height="$vuetify.breakpoint.xs ? 80 : 100"
                     />
-                    <h4 class="services__h4">{{ servic.name }}</h4>
-                    <p class="services__price">цена: {{ servic.price }}руб.</p>
+                    <div class="services__h4">
+                      <h4>{{ servic.name }}</h4>
+                    </div>
+                    <div class="services__price">
+                      <p>цена: {{ servic.price }}руб.</p>
+                    </div>
                   </v-col>
                   <v-col>
-                    <div>
+                    <div
+                      v-for="description in servic.description.split('.')"
+                      :key="description"
+                    >
                       <p class="services__description">
-                        {{ servic.description }}
+                        {{ description }}
                       </p>
                     </div>
                   </v-col>
@@ -45,14 +52,14 @@
                       v-show="servic.open"
                       class="mx-auto secondary pa-1 services__description"
                     >
-                      <p class="services__description">
+                      <p
+                        class="services__description services__description_transition"
+                      >
                         {{ servic.fullDescription }}
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Accusamus, adipisci alias animi architecto, cum
-                        dolorem exercitationem minus officia omnis ratione
-                        reprehenderit, sequi similique suscipit temporibus. Для
-                        заказа услуги
-                        <a href="tel:+74959371722" class="services__href"
+                        Для заказа услуги
+                        <a
+                          :href="'tel:' + $store.state.phone"
+                          class="services__href"
                           >свяжитесь с нами</a
                         >
                       </p>
@@ -80,9 +87,10 @@ export default {
           name: 'Оформление Европротокола',
           icon: 'evro',
           description:
-            'Консультация эксперта по поводу способа оформления ДТП Корректное составление документов с места ДТП Помощь с определением виновности',
+            'Консультация эксперта по поводу способа оформления ДТП. Корректное составление документов с места ДТП. Помощь с определением виновности',
           price: '2000',
-          fullDescription: 'Тут Полное описание услуги.',
+          fullDescription:
+            ' Чтобы не допустить ошибок, вызовите нашего эксперта..',
           open: false,
         },
         {
@@ -90,7 +98,7 @@ export default {
           name: 'Подготовка документов для суда',
           icon: 'sud',
           description:
-            'Независимая экспертиза по определению стоимости восстановления транспортного средства Подготовка искового заявления',
+            'Независимая экспертиза по определению стоимости восстановления транспортного средства. Подготовка искового заявления',
           price: '2000',
           fullDescription: 'Тут Полное описание услуги.',
           open: false,
@@ -100,7 +108,7 @@ export default {
           name: 'Расчет стоимости ущерба',
           icon: 'calc',
           description:
-            'Определение стоимости восстановления ТС Расчет утери товарной стоимости Расчет стоимость годных остатков автомобиля (годные к эксплуатации детали, которые можно продать)',
+            'Определение стоимости восстановления ТС. Расчет утери товарной стоимости. Расчет стоимость годных остатков автомобиля (годные к эксплуатации детали, которые можно продать)',
           price: '2000',
           fullDescription: 'Тут Полное описание услуги.',
           open: false,
@@ -139,16 +147,16 @@ export default {
   },
   methods: {
     hrefLogo(name) {
-      const href = require(`../assets/newIcon/${name.toLowerCase()}.svg`)
+      const href = require(`~/static/newIcon/${name.toLowerCase()}.svg`)
       return href
     },
   },
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper {
-  background-image: url('../assets/newIcon/backServices.svg');
+  background-image: url('../static/newIcon/backServices.svg');
   background-repeat: no-repeat;
   background-position: unset;
   background-size: cover;
@@ -156,10 +164,16 @@ export default {
 }
 
 .services__h4 {
-  font-size: 1.3rem;
-  width: 100px;
-  color: white;
-  display: contents;
+  & > h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .services__h4 {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .service__title {
@@ -182,6 +196,13 @@ export default {
   transition: all 0.2s ease;
   background: rgba(1, 1, 1, 0.7);
   backdrop-filter: drop-shadow(12px 11px 23px red);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .services__area {
+    padding: 5px !important;
+  }
 }
 
 .services__description {
@@ -189,10 +210,14 @@ export default {
   font-weight: normal;
   font-size: 1rem;
   line-height: 17px;
-  text-align: center;
   letter-spacing: 0.055em;
   white-space: pre-line;
-  min-width: -webkit-fill-available;
+  &_transition {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .services__href {
@@ -204,6 +229,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .services__block {
+    min-width: 100%;
+  }
 }
 
 .fullDescription-fade-enter-active {

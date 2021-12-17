@@ -13,7 +13,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../../assets/newIcon/helpDtp.svg')"
+                      :src="require('~/static/newIcon/helpDtp.svg')"
                       alt="Help / Помощь"
                       max-width="180"
                       max-height="178"
@@ -42,7 +42,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../../assets/newIcon/calc.svg')"
+                      :src="require('~/static/newIcon/calc.svg')"
                       alt="Раcчет"
                       max-width="180"
                       max-height="178"
@@ -71,7 +71,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../../assets/newIcon/posovet.svg')"
+                      :src="require('~/static/newIcon/posovet.svg')"
                       alt="Звонок"
                       max-width="180"
                       max-height="178"
@@ -110,10 +110,15 @@
         :placeholder="text"
         class="edit_text"
       ></textarea>
-      <v-btn @click="changeText">Применить</v-btn>
+      <v-btn @click="changeText">Посмотреть</v-btn>
       <v-btn @click="close"><v-icon dark> mdi-skull-crossbones </v-icon></v-btn>
       <v-btn @mousedown.stop="changePosition">
         <v-icon dark> mdi-arrow-all </v-icon></v-btn
+      >
+      <v-btn
+        @click="sendChange"
+        style="margin-top: 20px; border: 1px solid purple"
+        >Изменить на совсем</v-btn
       >
     </div>
   </v-container>
@@ -129,6 +134,7 @@ export default {
       editEnable: false,
       el: '',
       text: '',
+      textBefore: '',
       changePlace: false,
     }
   },
@@ -147,7 +153,7 @@ export default {
     },
     al() {
       if (!this.editEnable) {
-        this.text = event.target.textContent
+        this.text = event.target.textContent.replace(/\s+/g, ' ')
         this.el = event.target
         this.editEnable = true
         this.el.style.cssText = `
@@ -162,6 +168,7 @@ export default {
       }
     },
     changeText() {
+      this.textBefore = this.el.innerHTML
       this.el.textContent = this.text
     },
     changePosition() {
@@ -180,6 +187,31 @@ export default {
       this.text = ''
       this.el = ''
       this.editEnable = false
+    },
+    sendChange() {
+      const agree = confirm(
+        'Это окончательный вариант? И уже предварительно был просмотрен?'
+      )
+      if (agree) {
+        this.$axios
+          .post(this.$store.state.api, {
+            pathName: window.location.pathname,
+            tag: this.el.tagName,
+            class: this.el.className || 'none',
+            textBefore: this.textBefore,
+            newText: this.el.innerHTML,
+          })
+          .then((res) =>
+            alert(
+              'Успешно отправлено! В ближайшее время поменяю. ' + res.statusText
+            )
+          )
+          .catch((err) =>
+            alert(
+              'Что-то пошло не так! Надо попробовать еще разок. Ошибка ' + err
+            )
+          )
+      }
     },
   },
 }

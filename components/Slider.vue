@@ -2,7 +2,6 @@
   <v-container>
     <v-row>
       <v-carousel
-        :cycle="cycle"
         height="500"
         width="max-content"
         :hide-delimiter-background="
@@ -212,7 +211,7 @@ export default {
 <style scoped>
 .about__block {
   margin-top: 5%;
-  background: url('../assets/newIcon/backServices.svg') no-repeat center;
+  background: url('../static/newIcon/backServices.svg') no-repeat center;
   min-height: 150px;
   text-align: center;
 }
@@ -233,6 +232,9 @@ export default {
 }
 
 @media (max-width: 426px) {
+  .about__h {
+    max-width: min-content;
+  }
   .about__text {
     font-size: 1rem;
   }

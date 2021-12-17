@@ -7,7 +7,7 @@
     >
       <v-container>
         <v-row align="center" justify="center" class="evro__title padding">
-          <h4 class="evro__title_h4">Бланк Европротокола</h4>
+          <h3 class="evro__title_h4">Бланк Европротокола</h3>
         </v-row>
         <v-row>
           <div class="padding center flex mt-8">
@@ -25,7 +25,12 @@
 
                 <v-divider></v-divider>
 
-                <v-stepper-step step="3"> Важно </v-stepper-step>
+                <v-stepper-step :complete="e1 > 3" step="3">
+                  Важно
+                </v-stepper-step>
+                <v-divider></v-divider>
+
+                <v-stepper-step step="4"> Европротокол </v-stepper-step>
               </v-stepper-header>
 
               <v-stepper-items>
@@ -36,20 +41,10 @@
                     height="200px"
                   >
                     <div>
-                      <ul>
-                        <li>
-                          остановить (не трогать с места) транспортное средство
-                        </li>
-                        <li>
-                          включить аварийную сигнализацию выставить знак
-                          аварийной
-                        </li>
-                        <li>
-                          определить наличие погибших или раненых в результате
-                          ДТП
-                        </li>
-                        <li>Если есть пострадавшие позвоните 112</li>
-                      </ul>
+                      <p>
+                        Обязательно обезопасьте себя на дороге. Включите
+                        аварийный сигнал и выставьте знак аварийной остановки
+                      </p>
                     </div>
                     <v-icon class="icon">mdi-alert-outline</v-icon>
                   </v-card>
@@ -66,18 +61,7 @@
                     height="200px"
                   >
                     <div>
-                      <ul>
-                        <li>
-                          не перемещать предметы, имеющие отношение к
-                          происшествию
-                        </li>
-                        <li>
-                          если повреждены не только траспортные средства или
-                          приблизительынй ущерб более 100тр, вызовите
-                          сотридников ГАИ
-                        </li>
-                        <li>Сделайте фото с места ДТП (не мешая потоку)</li>
-                      </ul>
+                      <p>Проверьте полис виновника. Сделайте фото места ДТП.</p>
                     </div>
                   </v-card>
 
@@ -92,26 +76,28 @@
                     color="grey darken-3 pa-4 d-flex justify-center align-center"
                     height="200px"
                   >
-                    <h3>
-                      Есть пострадали только ТС и сумма ущерба менее 100тр
-                    </h3>
-                    <ul>
-                      <li>сделайте фото страхового полиса другого участника</li>
-                      <li>
-                        если у вас есть приложение РСА или вашей страховой
-                        компании, оформите ДТП через приложение
-                      </li>
-                      <li>
-                        заполните европротокол (исправления после разъединения
-                        не допускаются, не ошибайтесь)
-                      </li>
-                      <li>
-                        для надежности вы можете вызвать нашего эксперта
-                        <a href="tel:+74959371722" class="services__href"
-                          >свяжитесь с нами</a
-                        >
-                      </li>
-                    </ul>
+                    <div>
+                      <p>Оповестите страховые компании о ДТП</p>
+                    </div>
+                  </v-card>
+
+                  <v-btn color="primary" @click="e1 = 4"> Далее </v-btn>
+
+                  <v-btn text @click="e1 = 1"> К первому </v-btn>
+                </v-stepper-content>
+                <v-stepper-content step="4">
+                  <v-card
+                    class="mb-12"
+                    color="grey darken-3 pa-4 d-flex justify-center align-center"
+                    height="200px"
+                  >
+                    <div>
+                      <p>
+                        Вместе со вторым участником ДТП заполните извещение о
+                        ДТП (европротокол) в мобильном приложении(при его
+                        наличии) и бумажном виде.
+                      </p>
+                    </div>
                   </v-card>
 
                   <v-btn color="primary" disabled> Далее </v-btn>
@@ -129,7 +115,7 @@
             <div class="rule">
               <h3 class="rule__h">Правила оформления европротокола</h3>
               <ul>
-                <li>в ДТП нет потерпевших/li></li>
+                <li>в ДТП нет потерпевших</li>
                 <li>в ДТП участвуют только два ТС</li>
                 <li>
                   повреждения получили только участвовавшие в ДТП автомобили
@@ -151,13 +137,13 @@
               <div class="exm">
                 <h4 class="exm__h">
                   <a
-                    href="../assets/evro.png"
+                    href="../static/evro.png"
                     target="_blank"
                     download="evro.png"
                     >Образец заполнения европротокола</a
                   >
                 </h4>
-                <img class="exm__img" src="../assets/evro.png" alt="Образец" />
+                <img class="exm__img" src="~/static/evro.png" alt="Образец" />
               </div>
             </div>
           </div>

@@ -7,12 +7,12 @@
     >
       <v-container>
         <v-row align="center" justify="center" class="about__title">
-          <h4 class="about__title_h4">О нас</h4>
+          <h3 class="about__title_h4">О нас</h3>
         </v-row>
         <v-row>
           <div class="main">
             <p class="main__text">
-              Группа содействия <span class="attention">«Дельта»</span> - лидер
+              Группа содействия <span class="alert">«Дельта»</span> - лидер
               рынка аварийных комиссаров, независимой автоэкспертизы и правовой
               поддержки автовладельцев. Компания насчитывает более 200
               сотрудников, 50 из них входят в службу аварийных комиссаров.

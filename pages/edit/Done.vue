@@ -16,7 +16,7 @@
       </NuxtLink>
     </v-row>
     <v-row align="center" justify="center">
-      <v-img :src="require(`../../assets/newIcon/logoDelta.svg`)"></v-img>
+      <v-img src="~/assets/newIcon/logoDelta.svg"></v-img>
     </v-row>
   </v-container>
 </template>

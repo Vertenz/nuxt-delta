@@ -13,7 +13,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../assets/newIcon/helpDtp.svg')"
+                      :src="require('~/static/newIcon/helpDtp.svg')"
                       alt="Help / Помощь"
                       max-width="180"
                       max-height="178"
@@ -21,8 +21,8 @@
                   </div>
                   <div class="avarcom__bottom">
                     <h2 class="avarcom__h2">Помощь на месте</h2>
-                    <h3 class="avarcom__h3">Вызвать эксперта(аварком)</h3>
-                    <p class="avarcom__p">24 часа, Москва и область</p>
+                    <h3 class="avarcom__h3">Вызвать эксперта</h3>
+                    <p class="avarcom__p">24 часа, Москва и МО</p>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../assets/newIcon/calc.svg')"
+                      :src="require('~/static/newIcon/calc.svg')"
                       alt="Рачет"
                       max-width="180"
                       max-height="178"
@@ -50,7 +50,7 @@
                   </div>
                   <div class="avarcom__bottom">
                     <h2 class="avarcom__h2">Оценить ущерб</h2>
-                    <h3 class="avarcom__h3">подготовка заключения</h3>
+                    <h3 class="avarcom__h3">Подготовка заключения</h3>
                     <p class="avarcom__p">Заказать расчет стоимости ущерба</p>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div>
                   <div class="avarcom__top d-flex justify-center align-center">
                     <v-img
-                      :src="require('../assets/newIcon/posovet.svg')"
+                      :src="require('~/static/newIcon/posovet.svg')"
                       alt="Звонок"
                       max-width="180"
                       max-height="178"
@@ -80,7 +80,7 @@
                   <div class="avarcom__bottom">
                     <h2 class="avarcom__h2">Посоветоваться</h2>
                     <h3 class="avarcom__h3">как все сделать правильно</h3>
-                    <p class="avarcom__p">звонок бесплатный</p>
+                    <p class="avarcom__p">Звонок бесплатный</p>
                   </div>
                 </div>
               </div>

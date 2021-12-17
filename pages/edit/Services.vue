@@ -18,6 +18,11 @@
       <v-btn @mousedown.stop="changePosition">
         <v-icon dark> mdi-arrow-all</v-icon>
       </v-btn>
+      <v-btn
+        @click="sendChange"
+        style="margin-top: 20px; border: 1px solid purple"
+        >Изменить на совсем</v-btn
+      >
     </div>
   </v-container>
 </template>
@@ -66,6 +71,7 @@ export default {
       }
     },
     changeText() {
+      this.textBefore = this.el.innerHTML
       this.el.textContent = this.text
     },
     changePosition() {
@@ -84,6 +90,31 @@ export default {
       this.text = ''
       this.el = ''
       this.editEnable = false
+    },
+    sendChange() {
+      const agree = confirm(
+        'Это окончательный вариант? И уже предварительно был просмотрен?'
+      )
+      if (agree) {
+        this.$axios
+          .post(this.$store.state.api, {
+            pathName: window.location.pathname,
+            tag: this.el.tagName,
+            class: this.el.className || 'none',
+            textBefore: this.textBefore,
+            newText: this.el.innerHTML,
+          })
+          .then((res) =>
+            alert(
+              'Успешно отправлено! В ближайшее время поменяю. ' + res.statusText
+            )
+          )
+          .catch((err) =>
+            alert(
+              'Что-то пошло не так! Надо попробовать еще разок. Ошибка ' + err
+            )
+          )
+      }
     },
   },
 }
