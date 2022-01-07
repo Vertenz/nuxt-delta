@@ -49,7 +49,7 @@
                     <v-icon class="icon">mdi-alert-outline</v-icon>
                   </v-card>
 
-                  <v-btn color="primary" @click="e1 = 2"> Далее </v-btn>
+                  <v-btn @click="e1 = 2"> Далее </v-btn>
 
                   <v-btn text @click="e1 = 1"> К первому </v-btn>
                 </v-stepper-content>
@@ -65,7 +65,7 @@
                     </div>
                   </v-card>
 
-                  <v-btn color="primary" @click="e1 = 3"> Далее </v-btn>
+                  <v-btn @click="e1 = 3"> Далее </v-btn>
 
                   <v-btn text @click="e1 = 1"> К первому </v-btn>
                 </v-stepper-content>
@@ -81,7 +81,7 @@
                     </div>
                   </v-card>
 
-                  <v-btn color="primary" @click="e1 = 4"> Далее </v-btn>
+                  <v-btn @click="e1 = 4"> Далее </v-btn>
 
                   <v-btn text @click="e1 = 1"> К первому </v-btn>
                 </v-stepper-content>
@@ -100,7 +100,7 @@
                     </div>
                   </v-card>
 
-                  <v-btn color="primary" disabled> Далее </v-btn>
+                  <v-btn disabled> Далее </v-btn>
 
                   <v-btn text @click="e1 = 1"> К первому </v-btn>
                 </v-stepper-content>

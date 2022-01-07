@@ -51,7 +51,7 @@
             </template>
           </v-radio>
           <v-radio
-            value="Duckduckgo"
+            value="cash"
             title="Стоимость услуги зависит от необходимой работы. С вами свяжется оператор для уточнения всей информации"
           >
             <template #label>
@@ -80,12 +80,12 @@
                     @click.stop
                     v-on="on"
                   >
-                    условиями по
+                    условиями
                   </a>
                 </template>
                 Скачать условия и правила
               </v-tooltip>
-              оформлению услуги
+              по оформлению услуги
             </div>
           </template>
         </v-checkbox>

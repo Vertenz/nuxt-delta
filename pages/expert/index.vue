@@ -1,5 +1,5 @@
 <template>
-  <section id="expert" class="expert" @click.right="al()">
+  <section id="expert" class="expert">
     <v-container>
       <v-row align="center" justify="center" class="expert__title">
         <h4 class="expert__title_h4">Вызов эксперта на место ДТП</h4>
@@ -50,7 +50,7 @@
             </template>
           </v-radio>
           <v-radio
-            value="Duckduckgo"
+            value="cash"
             title="Стоимость услуги 2000 руб. (две тысячи рублей). Оплата производится наличным расчетом эксперту"
           >
             <template #label>
@@ -79,12 +79,12 @@
                     @click.stop
                     v-on="on"
                   >
-                    условиями по
+                    условиями
                   </a>
                 </template>
                 Скачать условия и правила
               </v-tooltip>
-              оформлению услуги
+              по оформлению услуги
             </div>
           </template>
         </v-checkbox>

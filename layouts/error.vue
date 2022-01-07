@@ -3,25 +3,23 @@
     <div v-if="error.statusCode === 404">
       <section class="not-exist">
         <h5 class="not-exist__title">{{ pageNotFound }}</h5>
-        <h6 class="not-exist__text">Данная страница не найдена</h6>
+        <h6 class="not-exist__text">
+          Можете связаться с нами или вернуться на главную
+        </h6>
         <NuxtLink to="/">
           <div class="not-exist__button">На главную</div>
         </NuxtLink>
-        <div class="media">
-          <h1>Media</h1>
-        </div>
       </section>
     </div>
     <div v-else>
       <section class="not-exist">
         <h5 class="not-exist__title">{{ otherError }}</h5>
-        <h6 class="not-exist__text">Данная страница не найдена</h6>
+        <h6 class="not-exist__text">
+          Можете связаться с нами или вернуться на главную
+        </h6>
         <NuxtLink to="/">
           <div class="not-exist__button">На главную</div>
         </NuxtLink>
-        <div class="media">
-          <h1>Media</h1>
-        </div>
       </section>
     </div>
   </v-app>
@@ -38,8 +36,8 @@ export default {
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred',
+      pageNotFound: '404 Страница не найдена',
+      otherError: 'Ошибка загрузки страницы',
     }
   },
   head() {
@@ -78,17 +76,5 @@ export default {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   padding: 1em 4em;
   font-size: 1.2rem;
-}
-.media {
-  background-color: #fff;
-  border-radius: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15%;
-  max-width: 100%;
-}
-.media > a {
-  margin: 3%;
 }
 </style>

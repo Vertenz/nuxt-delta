@@ -51,7 +51,7 @@
             </div>
             <h5 class="dtp__attention">
               Вы можете вызвать на место ДТП эксперта
-              <router-link to="/call">на нашем сайте.</router-link> для
+              <router-link to="/expert">на нашем сайте.</router-link> для
               получения профессиональной помощи
             </h5>
           </details>
@@ -89,7 +89,7 @@
             </div>
             <h4 class="dtp__attention">
               Вы можете вызвать на место ДТП эксперта
-              <router-link to="/call">на нашем сайте.</router-link> для
+              <router-link to="/expert">на нашем сайте.</router-link> для
               получения профессиональной помощи
             </h4>
           </details>
@@ -110,7 +110,7 @@
               </p>
               <h4 class="dtp__attention">
                 Вы можете вызвать на место ДТП эксперта
-                <router-link to="/call">на нашем сайте.</router-link> для
+                <router-link to="/expert">на нашем сайте.</router-link> для
                 получения профессиональной помощи
               </h4>
             </div>
@@ -150,7 +150,7 @@
               </p>
               <h4 class="dtp__attention">
                 Оценить примерный размер ущерба о своей аварии Вы можете
-                <router-link to="/call">на нашем сайте.</router-link>
+                <router-link to="/expert">на нашем сайте.</router-link>
               </h4>
             </div>
           </details>
@@ -162,12 +162,18 @@
             </summary>
             <div class="dtp__culprit">
               <p>
-                По правилам участники аварии не должны сдвигать автомобили с
-                места до при
+                Убрать ваше транспортное средство с место ДТП возможно в том
+                случае, если при происшествии есть пострадавшие, и необходима
+                необходима медицинская помощь и нет возможности транспортировать
+                пострадавшего на ином транспорте. Если нужно устранить
+                опасность, непосредственно угрожающую личности или интересам
+                общества или государства. И эта опасность не может быть
+                устранена иными средствами, а причиненный вред является менее
+                значительным, чем предотвращенный.
               </p>
               <h4 class="dtp__attention">
-                Вы можете вызвать на место ДТП эксперта
-                <router-link to="/call">на нашем сайте.</router-link> для
+                Вызовите эксперта
+                <router-link to="/expert">на нашем сайте</router-link>. Для
                 получения профессиональной помощи
               </h4>
             </div>
@@ -177,21 +183,35 @@
               <h4>Я попал в ДТП. Что делать?</h4>
             </summary>
             <div class="dtp__culprit">
-              а) Я виновник Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. 2. Когда оформлять европротокол, а когда
-              справку ГАИ?
+              <h4>а) Я виновник</h4>
+              <p>
+                Так как пунктом 2 статьи 11 Федерального закона № 40-ФЗ (об
+                ОСАГО) от 25 апреля 2002 года предусматривается обязанность
+                лица, которое является или может быть признано виновником ДТП,
+                уведомить об аварии свою страховую компанию. Вам необходимо
+                уведомить стразовую компанию о ДТП. Не ремонтируйте автомобиль
+                15 дней. Оставьте у себя копию извещения о ДТП, проверьте, что
+                все данные на ней читаются.
+              </p>
+              <h4 class="dtp__attention">
+                Вы можете вызвать на место ДТП эксперта
+                <router-link to="/expert">на нашем сайте.</router-link> для
+                получения профессиональной помощи
+              </h4>
             </div>
             <div class="dtp__victim">
-              б) Я потерпевший Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur
+              <h4>б) Я потерпевший</h4>
+              <p>
+                Если пострадали только автомобили, то вы можете заполнить
+                европротокол. Обязательно проверьте все данные, проверьте полис
+                виновника ДТП. О всей необходимой информации Вы можете узнать
+                нга нашем сайте.
+              </p>
+              <h4 class="dtp__attention">
+                Или вы можете вызвать на место ДТП эксперта
+                <router-link to="/expert">на нашем сайте.</router-link> для
+                получения профессиональной помощи
+              </h4>
             </div>
           </details>
         </div>

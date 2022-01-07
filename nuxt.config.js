@@ -49,7 +49,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://deltapilot.xyz/',
+    baseURL: 'https://deltapilot.xyz/',
   },
 
   pwa: {
@@ -59,7 +59,7 @@ export default {
       description: 'служба аварийных коммисаров',
       background_color: '#121212',
       theme_color: '#b71c1c',
-      start_url: 'http://deltapilot.xyz/',
+      start_url: 'https://deltapilot.xyz/',
     },
     icons: {
       iconFileName:
@@ -68,12 +68,31 @@ export default {
   },
 
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
     theme: {
       options: {
         customProperties: true,
       },
       dark: true,
+      themes: {
+        dark: {
+          primary: '#FFF',
+          secondary: '#424242',
+          accent: '#121212',
+          error: '#FF5252',
+          info: '#2196F3',
+          success: '#4CAF50',
+          warning: '#FFC107',
+        },
+        light: {
+          primary: '#000',
+          secondary: '#424242',
+          accent: '#EAF0EE',
+          error: '#FF5252',
+          info: '#2196F3',
+          success: '#4CAF50',
+          warning: '#FFC107',
+        },
+      },
     },
   },
   build: {},

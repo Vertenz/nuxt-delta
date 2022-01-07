@@ -71,10 +71,15 @@
         </v-row>
         <v-row>
           <div class="address">
-            <div class="address-title">
+            <div class="address-title" @click="copyAddress">
               <h3 class="address-title__h">Наш адрес:</h3>
               <p class="address-title__p">г. Москва, ул. Земляной вал,</p>
               <p class="address-title__p">дом 38/40, стр. 5</p>
+              <transition name="fade">
+                <v-alert v-if="showCopy" type="success" class="address__alert">
+                  Адрес скопирован
+                </v-alert>
+              </transition>
             </div>
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3A0e89918f68a809f094d596c2f071ced4edcb0539a6744528c5e8763c7ee494e5&amp;source=constructor"
@@ -96,17 +101,38 @@ export default {
     return {
       contactShow: false,
       fontBig: false,
+      showCopy: false,
     }
   },
   methods: {
     email() {
       window.open('mailto:gsd24@gsd24.ru', '_blank')
     },
+    copyAddress() {
+      navigator.clipboard
+        .writeText('ул. Земляной вал, дом 38/40, стр. 5')
+        .then(() => {
+          this.showCopy = true
+          setTimeout(() => {
+            this.showCopy = false
+          }, 1500)
+        })
+        .catch((err) => console.log(err))
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 iframe {
   min-width: 70vw !important;
   min-height: 70vh !important;
@@ -178,6 +204,10 @@ iframe {
 .address-title__h,
 .address-title__p {
   font-size: 2rem;
+}
+
+.address__alert {
+  position: absolute;
 }
 
 .icon {

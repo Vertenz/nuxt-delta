@@ -39,56 +39,56 @@
           >
         </template>
         <v-carousel-item>
-          <v-sheet class="black" height="100%">
+          <v-sheet height="100%">
             <v-row class="fill-height blur" align="center" justify="center">
-              <div class="text-h2">
-                <div class="about__block">
+              <div class="about__block">
+                <div class="wrapper">
                   <h2 class="about__h">Физическим лицам</h2>
-                  <p
-                    class="about__text"
-                    @click="
-                      addText('ak')
-                      expand = true
-                    "
-                  >
-                    Cлужба аварийных комиссаров
-                  </p>
-                  <p
-                    class="about__text"
-                    @click="
-                      addText('help')
-                      expand = true
-                    "
-                  >
-                    Круглосуточная поддержка
-                  </p>
-                  <p
-                    class="about__text"
-                    @click="
-                      expand = true
-                      addText('calc')
-                    "
-                  >
-                    Независимая экспертиза, оценка
-                  </p>
-                  <p
-                    class="about__text"
-                    @click="
-                      expand = true
-                      addText('onlineCalc')
-                    "
-                  >
-                    Онлайн оценка ущерба
-                  </p>
                 </div>
+                <p
+                  class="about__text"
+                  @click="
+                    addText('ak')
+                    expand = true
+                  "
+                >
+                  Cлужба аварийных комиссаров
+                </p>
+                <p
+                  class="about__text"
+                  @click="
+                    addText('help')
+                    expand = true
+                  "
+                >
+                  Круглосуточная поддержка
+                </p>
+                <p
+                  class="about__text"
+                  @click="
+                    expand = true
+                    addText('calc')
+                  "
+                >
+                  Независимая экспертиза, оценка
+                </p>
+                <p
+                  class="about__text"
+                  @click="
+                    expand = true
+                    addText('onlineCalc')
+                  "
+                >
+                  Онлайн оценка ущерба
+                </p>
               </div>
             </v-row>
           </v-sheet>
         </v-carousel-item>
         <v-carousel-item>
-          <v-sheet class="black" height="100%">
+          <v-sheet height="100%">
             <v-row class="fill-height" align="center" justify="center">
-              <div class="text-h2">
+              <div class="wrapper">
                 <div class="about__block">
                   <h2 class="about__h">Юридическим лицам</h2>
                   <p
@@ -210,14 +210,15 @@ export default {
 </script>
 <style scoped>
 .about__block {
-  margin-top: 5%;
   background: url('../static/newIcon/backServices.svg') no-repeat center;
+  background-size: 70%;
   min-height: 150px;
   text-align: center;
 }
 
 .about__text {
-  margin: 10px 0;
+  padding: 1em;
+  margin: 0.5em 0;
   font-size: 1.5rem;
   backdrop-filter: blur(50px);
 }
@@ -225,6 +226,13 @@ export default {
 .about__text:hover {
   cursor: pointer;
   color: red;
+}
+
+.wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about__h {
@@ -237,6 +245,9 @@ export default {
   }
   .about__text {
     font-size: 1rem;
+  }
+  .about__block {
+    background-size: 50%;
   }
 }
 </style>

@@ -92,8 +92,4 @@ sw.*
 #nuxt git
 .github
 
-#todo
-todo.js
 
-#Server side
-server

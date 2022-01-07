@@ -1,5 +1,6 @@
 <template>
   <v-app root>
+    <Test />
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -11,6 +12,12 @@
       nuxt
     >
       <v-list class="mt-10">
+        <v-switch
+          v-model="$vuetify.theme.dark"
+          inset
+          label="Поменять тему"
+          persistent-hint
+        ></v-switch>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -45,7 +52,7 @@
       </div>
       <v-spacer></v-spacer>
       <div class="header__tel">
-        <a href="tel:+74959371722" title="позвонить"
+        <a :href="'tel:' + $store.state.phone"
           ><v-icon>mdi-cellphone-wireless</v-icon></a
         >
       </div>
@@ -113,7 +120,7 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="scss">
 .center {
   display: flex;
   justify-content: center;
@@ -142,12 +149,7 @@ export default {
 }
 
 .nav {
-  background: linear-gradient(
-    180deg,
-    rgba(54, 54, 54, 1) 0%,
-    rgba(37, 37, 37, 1) 35%,
-    rgba(18, 18, 18, 0.991) 100%
-  );
+  max-height: 100% !important;
 }
 
 .alert {

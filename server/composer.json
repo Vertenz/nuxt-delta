@@ -1,8 +1,0 @@
-{
-    "require": {
-        "phpmailer/phpmailer": "^6.2",
-        "econea/nusoap": "^0.9.11",
-      "ext-xmlwriter": "*",
-      "ext-dom": "*"
-    }
-}
