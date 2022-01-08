@@ -164,11 +164,11 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  background-image: url('../static/newIcon/backServices.svg');
-  background-repeat: no-repeat;
-  background-position: unset;
-  background-size: cover;
-  backdrop-filter: brightness(1);
+  position: relative;
+  background-image: url('../static/serviceback.png');
+  background-repeat: repeat-y;
+  background-position: center;
+  background-position-x: 83vw;
 }
 
 .services__h4 {

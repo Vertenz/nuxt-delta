@@ -1,6 +1,5 @@
 <template>
   <v-app root>
-    <Test />
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
