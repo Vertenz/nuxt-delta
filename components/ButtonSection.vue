@@ -96,7 +96,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main__link {
   text-decoration: none;
 }

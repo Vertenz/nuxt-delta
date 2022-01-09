@@ -7,7 +7,7 @@
     >
       <v-container>
         <v-row align="center" justify="center" class="about__title">
-          <h3 class="about__title_h4">О нас</h3>
+          <h3 class="about__title_h3">О нас</h3>
         </v-row>
         <v-row>
           <div class="main">
@@ -62,24 +62,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about {
   padding-bottom: 50%;
-}
-
-.about__title {
-  border-top: 1px solid #b71c1c;
-  border-bottom: 1px solid #b71c1c;
-}
-
-.about__title_h4 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.7rem;
-  line-height: 29px;
-  text-align: center;
-  letter-spacing: 0.055em;
-  padding: 3% 0;
+  &__title {
+    border-top: 1px solid #b71c1c;
+    border-bottom: 1px solid #b71c1c;
+    &_h3 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.7rem;
+      line-height: 29px;
+      text-align: center;
+      letter-spacing: 0.055em;
+      padding: 3% 0;
+    }
+  }
 }
 
 .main__text {

@@ -16,6 +16,7 @@
           inset
           label="Поменять тему"
           persistent-hint
+          class="nav__theme-switch"
         ></v-switch>
         <v-list-item
           v-for="(item, i) in items"
@@ -149,6 +150,9 @@ export default {
 
 .nav {
   max-height: 100% !important;
+  &__theme-switch {
+    padding-left: 2em;
+  }
 }
 
 .alert {

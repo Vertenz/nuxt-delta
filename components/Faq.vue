@@ -231,25 +231,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .faq {
   background-size: cover;
   padding-bottom: 10%;
-}
-
-.faq__title {
-  border-top: 1px solid #b71c1c;
-  border-bottom: 1px solid #b71c1c;
-}
-
-.faq__title_h {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.7rem;
-  line-height: 29px;
-  text-align: center;
-  letter-spacing: 0.055em;
-  padding: 3% 0;
+  &__title {
+    border-top: 1px solid #b71c1c;
+    border-bottom: 1px solid #b71c1c;
+    &_h {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.7rem;
+      line-height: 29px;
+      text-align: center;
+      letter-spacing: 0.055em;
+      padding: 3% 0;
+    }
+  }
 }
 
 .dtp__summary {

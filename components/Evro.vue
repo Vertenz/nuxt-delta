@@ -7,7 +7,7 @@
     >
       <v-container>
         <v-row align="center" justify="center" class="evro__title padding">
-          <h3 class="evro__title_h4">Бланк Европротокола</h3>
+          <h3 class="evro__title_h3">Бланк Европротокола</h3>
         </v-row>
         <v-row>
           <div class="padding center flex mt-8">
@@ -165,37 +165,33 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .evro {
   padding-bottom: 20%;
-}
-
-.evro__title {
-  border-top: 1px solid #b71c1c;
-  border-bottom: 1px solid #b71c1c;
-}
-
-.evro__title_h4 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.7rem;
-  line-height: 29px;
-  text-align: center;
-  letter-spacing: 0.055em;
-  padding: 3% 0;
-}
-
-.evro__button {
-  margin-top: 5%;
-  display: flex;
-}
-
-.evro__button > a {
-  background-color: #fff;
-  color: red;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 1em 2em;
-  font-size: 1.2rem;
+  &__title {
+    border-top: 1px solid #b71c1c;
+    border-bottom: 1px solid #b71c1c;
+    &_h3 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.7rem;
+      line-height: 29px;
+      text-align: center;
+      letter-spacing: 0.055em;
+      padding: 3% 0;
+    }
+  }
+  &__button {
+    margin-top: 5%;
+    display: flex;
+    & > a {
+      background-color: #fff;
+      color: red;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 1em 2em;
+      font-size: 1.2rem;
+    }
+  }
 }
 
 .exm__img {
@@ -205,11 +201,12 @@ export default {
 .flex {
   flex-direction: column;
 }
+
 .rule {
   margin-top: 5%;
-}
-.rule__h {
-  font-size: 1.5rem;
+  &__h {
+    font-size: 1.5rem;
+  }
 }
 
 .icon {

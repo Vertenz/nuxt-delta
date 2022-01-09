@@ -2,7 +2,7 @@
   <section id="expert" class="expert">
     <v-container>
       <v-row align="center" justify="center" class="expert__title">
-        <h4 class="expert__title_h4">Вызов эксперта на место ДТП</h4>
+        <h3 class="expert__title_h3">Вызов эксперта на место ДТП</h3>
       </v-row>
       <v-form class="pa-8">
         <v-text-field
@@ -99,19 +99,6 @@
         </div>
       </v-row>
     </v-container>
-    <div v-if="editEnable" id="edit" class="edit">
-      <textarea
-        id="edit_text"
-        v-model="text"
-        :placeholder="text"
-        class="edit_text"
-      ></textarea>
-      <v-btn @click="changeText">Применить</v-btn>
-      <v-btn @click="close"><v-icon dark> mdi-skull-crossbones </v-icon></v-btn>
-      <v-btn @mousedown.stop="changePosition">
-        <v-icon dark> mdi-arrow-all </v-icon></v-btn
-      >
-    </div>
   </section>
 </template>
 
@@ -254,35 +241,18 @@ export default {
 <style scoped>
 .expert {
   padding-bottom: 50%;
-}
-
-.expert__title {
-  border-top: 1px solid #b71c1c;
-  border-bottom: 1px solid #b71c1c;
-}
-
-.expert__title_h4 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.7rem;
-  line-height: 29px;
-  text-align: center;
-  letter-spacing: 0.055em;
-  padding: 3% 0;
-}
-
-.edit {
-  position: fixed;
-  z-index: 999;
-  top: 25px;
-  background-color: #3c3b3b;
-  display: flex;
-  flex-direction: column;
-  height: 350px;
-  width: 350px;
-  &_text {
-    color: white;
-    margin-bottom: 50px;
+  &__title {
+    border-top: 1px solid #b71c1c;
+    border-bottom: 1px solid #b71c1c;
+    &_h3 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.7rem;
+      line-height: 29px;
+      text-align: center;
+      letter-spacing: 0.055em;
+      padding: 3% 0;
+    }
   }
 }
 </style>
