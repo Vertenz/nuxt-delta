@@ -3,7 +3,7 @@
 ## До отправки
  1. Изменить адрес в стор
  2. Изменить порт развертывания
-### Version description
+### Version descriptionhttps://github.com/Vertenz/nuxt-delta/pull/1/conflict?name=README.md&ancestor_oid=d286a73de9f0568da2566ac27df0886c391cd9dc&base_oid=acc6b8a13b89bcc6387e94841684603c37153af5&head_oid=6909928da4521a5633d4db2f675f5dafa72d07f9
 
 ```bash
 #ver. 1.1.0
