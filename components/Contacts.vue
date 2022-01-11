@@ -12,7 +12,7 @@
           </div>
         </v-row>
         <v-row>
-          <div class="contact-block padding">
+          <div class="contact-block">
             <div class="contact-block__logo">
               <v-img
                 :src="require('~/static/newIcon/help.svg')"
@@ -22,6 +22,7 @@
               />
             </div>
             <div class="contact-block__text">
+              <div @click="copyPhone">{{ $store.state.phone }}</div>
               <a
                 :href="'tel:' + $store.state.phone"
                 class="contact-block__link"
@@ -29,11 +30,16 @@
                 <p class="contact-block__p">Позвонить нам</p>
                 <p class="contact-block__p">Круглосуточная помощь</p>
               </a>
+              <transition name="fade">
+                <v-alert v-if="showCopyP" type="success" class="address__alert">
+                  Телефон скопирован
+                </v-alert>
+              </transition>
             </div>
           </div>
         </v-row>
         <v-row>
-          <div class="contact-block padding">
+          <div class="contact-block">
             <div class="contact-block__logo">
               <v-img
                 :src="require('~/static/newIcon/posovet.svg')"
@@ -53,7 +59,7 @@
           </div>
         </v-row>
         <v-row>
-          <div class="contact-block contact-block_smedia padding">
+          <div class="contact-block contact-block_smedia">
             <div class="contact-block__text">
               <h4 class="contact-block__h">Онлайн</h4>
               <div class="media">
@@ -76,7 +82,7 @@
               <p class="address-title__p">г. Москва, ул. Земляной вал,</p>
               <p class="address-title__p">дом 38/40, стр. 5</p>
               <transition name="fade">
-                <v-alert v-if="showCopy" type="success" class="address__alert">
+                <v-alert v-if="showCopyA" type="success" class="address__alert">
                   Адрес скопирован
                 </v-alert>
               </transition>
@@ -101,7 +107,8 @@ export default {
     return {
       contactShow: false,
       fontBig: false,
-      showCopy: false,
+      showCopyA: false,
+      showCopyP: false,
     }
   },
   methods: {
@@ -112,9 +119,20 @@ export default {
       navigator.clipboard
         .writeText('ул. Земляной вал, дом 38/40, стр. 5')
         .then(() => {
-          this.showCopy = true
+          this.showCopyA = true
           setTimeout(() => {
-            this.showCopy = false
+            this.showCopyA = false
+          }, 1500)
+        })
+        .catch((err) => console.log(err))
+    },
+    copyPhone() {
+      navigator.clipboard
+        .writeText(this.$store.state.phone)
+        .then(() => {
+          this.showCopyP = true
+          setTimeout(() => {
+            this.showCopyP = false
           }, 1500)
         })
         .catch((err) => console.log(err))
@@ -157,8 +175,8 @@ iframe {
 .contact-block {
   display: flex;
   min-width: 100%;
-  margin: 8% 0;
-  padding: 3%;
+  margin: 3% 0;
+  padding: 1%;
   background-color: rgba(216, 18, 36, 0.1);
   justify-content: flex-start;
   align-items: center;

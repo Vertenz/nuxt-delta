@@ -238,7 +238,7 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .expert {
   padding-bottom: 50%;
   &__title {
